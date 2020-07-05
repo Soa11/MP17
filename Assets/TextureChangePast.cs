@@ -34,7 +34,7 @@ public class TextureChangePast : MonoBehaviour
         if (timer > timerMax)
         {
             timer = 0;
-            Debug.Log(array[index]);
+            //Debug.Log(array[index]);
             PastMat.SetTexture("_TexturePast", array[index]);
             //renderer.material.SetTexture("_BaseColorMap", array[index]);
             index += 1;
