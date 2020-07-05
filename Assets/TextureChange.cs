@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextureChangeFuture : MonoBehaviour
+public class TextureChange : MonoBehaviour
 {
     //Working timer variable
     //float timer = 0;
@@ -14,8 +14,8 @@ public class TextureChangeFuture : MonoBehaviour
     public Material PastMat;
 
     //Array of textures
-    public Texture[] array;
-    public Texture[] PastMatarray;
+    public Texture[] Futurearray;
+    public Texture[] Pastarray;
     //index by which we access array
     int index = 0;
 
@@ -23,8 +23,8 @@ public class TextureChangeFuture : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FutureMat.SetTexture("_TextureFuture", array[index]);
-        PastMat.SetTexture("_TexturePast", PastMatarray[index]);
+        FutureMat.SetTexture("_TextureFuture", Futurearray[index]);
+        PastMat.SetTexture("_TexturePast", Pastarray[index]);
     }
 
     // Update is called once per frame
@@ -39,8 +39,8 @@ public class TextureChangeFuture : MonoBehaviour
             rotate.totalRotation -= 360;
 
             index += 1;
-            FutureMat.SetTexture("_TextureFuture", array[index]);
-            PastMat.SetTexture("_TexturePast", PastMatarray[index]);
+            FutureMat.SetTexture("_TextureFuture", Futurearray[index]);
+            PastMat.SetTexture("_TexturePast", Pastarray[index]);
 
             // index += 1;
 
