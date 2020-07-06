@@ -17,11 +17,11 @@ TagManager:
   - IngnoreReflection
   - ignoreMainCam
   - MtexPlane
-  - 
-  - 
-  - 
-  - 
-  - 
+  - face
+  - Cylinder
+  - Janus_Mtex
+  - Janus_Mtex_past
+  - Janus_Mtex_future
   - 
   - 
   - 
