@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Janus_MirrorTexture.unity
     guid: a62805b934b174e4d85f63a6741c7328
+  - enabled: 1
+    path: Assets/Janus_Final.unity
+    guid: 0b4acb0f65805cb4c89c2eaefb6512d4
   m_configObjects: {}
