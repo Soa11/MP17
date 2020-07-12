@@ -16,47 +16,27 @@ public class CylinderTextureChange : MonoBehaviour
     //Array of textures
     public Texture[] Futurearray;
     public Texture[] Pastarray;
+
     //index by which we access array
     int index = 0;
 
+    string playerPrefsTextureIndex = "Texture Index";
 
-    // Start is called before the first frame update
+
     void Start()
     {
+        //Retrieve Index from playerprefs, and use it
+        index = PlayerPrefs.GetInt(playerPrefsTextureIndex);
+        Debug.Log("Loaded Index " + index);
+
+
         FutureMat.SetTexture("_TextureFuture", Futurearray[index]);
         PastMat.SetTexture("_TexturePast", Pastarray[index]);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        //RotateCylinder rotate = GetComponent<RotateCylinder>();
-        //Debug.Log(rotate.totalRotation);
-
-        /*if (rotate.totalRotation > 360)
-        {
-
-            rotate.totalRotation -= 360;
-
-            index += 1;
-            FutureMat.SetTexture("_TextureFuture", Futurearray[index]);
-            PastMat.SetTexture("_TexturePast", Pastarray[index]);
-
-            // index += 1;
-
-            if (index == 50)
-            {
-                index = 0;
-            }
-
-
-            //Debug.Log(rotate.totalRotation);
-        }*/
-
-
         timer += Time.deltaTime;
-        Debug.Log(timer);
 
         if (timer > timerMax)
         {
@@ -64,17 +44,16 @@ public class CylinderTextureChange : MonoBehaviour
             
             FutureMat.SetTexture("_TextureFuture", Futurearray[index]);
             PastMat.SetTexture("_TexturePast", Pastarray[index]);
-            //Debug.Log(array[index]);
-            index += 1;
-            //index++;
-            //index++;
-           
 
+            //Change Index
+            index += 1;
             if (index == 50)
             {
                 index = 0;
             }
-            
+
+            //Save Index to playerprefs
+            PlayerPrefs.SetInt(playerPrefsTextureIndex, index);
         }
     }
 }
